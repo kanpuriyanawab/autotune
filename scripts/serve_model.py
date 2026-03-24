@@ -81,7 +81,7 @@ def main():
 
     demo = gr.ChatInterface(
         respond,
-        title=f"Unsloth MCP — {args.model}",
+        title=f"Autotune — {args.model}",
         description=f"Adapter: {args.adapter or 'none (base model)'}",
     )
     demo.launch(server_port=args.port, share=args.share)
