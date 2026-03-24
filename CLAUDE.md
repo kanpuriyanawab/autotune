@@ -27,9 +27,9 @@ uv run python server.py
 
 The project has three layers:
 
-**`server.py`** — The MCP server. Registers 14 tools via `@mcp.tool()` decorators on async functions. Runs via stdio transport (`mcp.run(transport="stdio")`). Tools either call into `unsloth_mcp/` for pure logic, or call `scripts/` via subprocess through `run_script()`.
+**`server.py`** — The MCP server. Registers 14 tools via `@mcp.tool()` decorators on async functions. Runs via stdio transport (`mcp.run(transport="stdio")`). Tools either call into `autotune/` for pure logic, or call `scripts/` via subprocess through `run_script()`.
 
-**`unsloth_mcp/`** — Pure Python library (no GPU required, fully testable):
+**`autotune/`** — Pure Python library (no GPU required, fully testable):
 - `workflow.py` — ML planning logic: `detect_dataset_format()`, `recommend_backend()`, `build_experiment_plan()`, `compare_runs()`, `diagnose_run()`, `load_run_summaries()`, `summarize_dataset_preview()`
 - `project.py` — Project scaffolding: `ensure_project_layout()`, `load_project_context()`, template generators
 
@@ -60,21 +60,21 @@ results/run_001/
 
 | Tool | Purpose |
 |------|---------|
-| `mcp__unsloth-mcp__check_gpu` | Inspect CUDA availability and VRAM |
-| `mcp__unsloth-mcp__init_project` | Create project context and result directories |
-| `mcp__unsloth-mcp__inspect_dataset` | Audit dataset schema, format, and risks |
-| `mcp__unsloth-mcp__suggest_backends` | Choose between Unsloth and Hugging Face |
-| `mcp__unsloth-mcp__plan_experiments` | Produce an approval-ready run plan (adaptive: adjusts for VRAM, dataset size, baseline; generates DPO plans for preference datasets) |
-| `mcp__unsloth-mcp__estimate_vram` | Estimate peak VRAM before approving a run |
-| `mcp__unsloth-mcp__run_training` | Execute one approved SFT run (supports W&B/MLflow, checkpoint resume) |
-| `mcp__unsloth-mcp__run_dpo_training` | Execute one approved DPO or ORPO preference-optimization run |
-| `mcp__unsloth-mcp__run_evaluation` | Evaluate a base model or adapter (MMLU or custom dataset) |
-| `mcp__unsloth-mcp__compare_experiments` | Rank runs by saved metrics |
-| `mcp__unsloth-mcp__diagnose_experiment` | Diagnose OOMs, instability, or weak runs |
-| `mcp__unsloth-mcp__ship_decision` | Summarize whether the best run is ready |
-| `mcp__unsloth-mcp__merge_adapter` | Merge LoRA adapter into base model for deployment or GGUF export |
-| `mcp__unsloth-mcp__export_gguf` | Export model to GGUF for llama.cpp / Ollama / LM Studio |
-| `mcp__unsloth-mcp__serve_model` | Launch a Gradio chat interface |
+| `mcp__autotune__check_gpu` | Inspect CUDA availability and VRAM |
+| `mcp__autotune__init_project` | Create project context and result directories |
+| `mcp__autotune__inspect_dataset` | Audit dataset schema, format, and risks |
+| `mcp__autotune__suggest_backends` | Choose between Unsloth and Hugging Face |
+| `mcp__autotune__plan_experiments` | Produce an approval-ready run plan (adaptive: adjusts for VRAM, dataset size, baseline; generates DPO plans for preference datasets) |
+| `mcp__autotune__estimate_vram` | Estimate peak VRAM before approving a run |
+| `mcp__autotune__run_training` | Execute one approved SFT run (supports W&B/MLflow, checkpoint resume) |
+| `mcp__autotune__run_dpo_training` | Execute one approved DPO or ORPO preference-optimization run |
+| `mcp__autotune__run_evaluation` | Evaluate a base model or adapter (MMLU or custom dataset) |
+| `mcp__autotune__compare_experiments` | Rank runs by saved metrics |
+| `mcp__autotune__diagnose_experiment` | Diagnose OOMs, instability, or weak runs |
+| `mcp__autotune__ship_decision` | Summarize whether the best run is ready |
+| `mcp__autotune__merge_adapter` | Merge LoRA adapter into base model for deployment or GGUF export |
+| `mcp__autotune__export_gguf` | Export model to GGUF for llama.cpp / Ollama / LM Studio |
+| `mcp__autotune__serve_model` | Launch a Gradio chat interface |
 
 ## Default Workflow
 

@@ -1,6 +1,6 @@
 {
   "mcpServers": {
-    "unsloth-mcp": {
+    "autotune": {
       "type": "stdio",
       "command": ".venv/bin/python",
       "args": ["server.py"],

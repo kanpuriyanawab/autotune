@@ -14,7 +14,7 @@ from peft import LoraConfig, get_peft_model
 from transformers import AutoModelForCausalLM, AutoTokenizer, TrainingArguments
 from trl import SFTTrainer
 
-from unsloth_mcp.workflow import infer_text_field
+from autotune.workflow import infer_text_field
 
 
 def parse_args():

@@ -13,8 +13,8 @@ from datasets import load_dataset
 from mcp.server.fastmcp import FastMCP
 import torch
 
-from unsloth_mcp.project import ensure_project_layout, load_project_context, slugify
-from unsloth_mcp.workflow import (
+from autotune.project import ensure_project_layout, load_project_context, slugify
+from autotune.workflow import (
     build_experiment_plan,
     compare_runs,
     diagnose_run,
@@ -26,7 +26,7 @@ from unsloth_mcp.workflow import (
 )
 
 
-mcp = FastMCP("unsloth-mcp")
+mcp = FastMCP("autotune")
 
 ROOT_DIR = Path(__file__).parent
 RESULTS_DIR = ROOT_DIR / "results"

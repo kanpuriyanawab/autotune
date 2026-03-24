@@ -1,4 +1,4 @@
-"""Shared helpers for the unsloth-mcp ML R&D plugin."""
+"""Shared helpers for the autotune ML R&D plugin."""
 
 from .project import ensure_project_layout, load_project_context, slugify
 from .workflow import (

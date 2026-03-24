@@ -7,8 +7,8 @@ import tempfile
 from pathlib import Path
 import unittest
 
-from unsloth_mcp.project import ensure_project_layout
-from unsloth_mcp.workflow import (
+from autotune.project import ensure_project_layout
+from autotune.workflow import (
     build_experiment_plan,
     compare_runs,
     detect_dataset_format,

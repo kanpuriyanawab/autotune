@@ -1,6 +1,6 @@
 # Unsloth ML R&D Copilot for Claude Code
 
-`unsloth-mcp` is a Claude Code plugin + MCP runtime for **machine learning R&D workflows**.
+`autotune` is a Claude Code plugin + MCP runtime for **machine learning R&D workflows**.
 It is designed for **applied ML engineers and researchers** who want a structured loop for:
 
 - defining a project brief
@@ -48,14 +48,14 @@ but it is **not fully implemented yet**.
 ## Repository Layout
 
 ```text
-unsloth-mcp/
+autotune/
 ├── .claude-plugin/          # Claude plugin metadata
 ├── .mcp.json                # Local MCP registration for Claude Code
 ├── CLAUDE.md                # Guidance for Claude Code in this repo
 ├── commands/                # Slash commands
 ├── skills/                  # Skills Claude consults while reasoning
 ├── scripts/                 # Execution scripts for training/eval/serve
-├── unsloth_mcp/             # Shared workflow logic
+├── autotune/             # Shared workflow logic
 ├── tests/                   # Unit tests for planning/runtime helpers
 └── results/                 # Run outputs (gitignored)
 ```
@@ -85,8 +85,8 @@ unsloth-mcp/
 ### 1. Clone the repo
 
 ```bash
-git clone <your-repo-url> unsloth-mcp
-cd unsloth-mcp
+git clone <your-repo-url> autotune
+cd autotune
 ```
 
 ### 2. Install dependencies
@@ -472,7 +472,7 @@ For local paths, pass the file path directly in Claude Code or tool calls.
 ### Run a quick syntax/bytecode check
 
 ```bash
-.venv/bin/python -m compileall server.py scripts unsloth_mcp tests
+.venv/bin/python -m compileall server.py scripts autotune tests
 ```
 
 ### Start the server manually
