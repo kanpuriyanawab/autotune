@@ -1,0 +1,6 @@
+{
+  "name": "unsloth-ml",
+  "version": "0.3.0",
+  "description": "ML R&D copilot plugin — SFT and DPO/ORPO training, GGUF export, VRAM estimation, adapter merge, W&B/MLflow tracking, custom evaluation, and checkpoint resume",
+  "author": "unsloth"
+}

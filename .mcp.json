@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "unsloth-mcp": {
+      "type": "stdio",
+      "command": ".venv/bin/python",
+      "args": ["server.py"],
+      "env": {
+        "CUDA_VISIBLE_DEVICES": "0"
+      }
+    }
+  }
+}
